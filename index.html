@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jack DiCarlantonio - Research Coordinator</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:700,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --blue: #33495d;
+            --light-blue: #6596c8;
+            --tan: #f6f2ef;
+            --brown: #41210c;
+            --orange: #d97b49;
+        }
+
+        body {
+            margin: 0;
+            background: var(--tan);
+            font-family: 'Montserrat', Arial, sans-serif;
+            color: #222;
+        }
+
+        /* NAV */
+        .nav {
+            width: 100%;
+            background: var(--light-blue);
+            padding: 0.2em 0 0.2em 0;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 0.8em;
+            position: fixed;
+            top:0; left:0;
+            z-index: 10;
+        }
+        .nav a {
+            color: #fff !important;
+            text-decoration: none;
+            font-size: 1.3em;
+            padding: 0 6px;
+            display: inline-flex;
+            align-items: center;
+        }
+        .nav .email-icon {
+            font-size: 2.0em;
+            margin-right: 10px;
+            color: #fff !important;
+        }
+	.nav .x-link svg {
+    	width: 22px;
+   	 height: 22px;
+	}
+        .nav svg {
+            width: 30px;
+            height: 30px;
+            display: inline-block;
+            vertical-align: middle;
+            fill: #fff !important;
+            color: #fff !important;
+            transition: opacity 0.2s;
+        }
+        .nav a:hover,
+        .nav svg:hover {
+            opacity: 0.7;
+        }
+
+        /* HERO (IMAGE + NAME) */
+        .hero-bg {
+            background: url('Backgroundphoto.png') center/cover no-repeat;
+            width:100%; min-height:250px;
+            padding-top: 60px;
+            display:flex;
+            flex-direction: row;
+            align-items:stretch;
+            position: relative;
+        }
+        .hero-inner {
+            flex:1;
+            display: flex;
+            flex-direction: row;
+            align-items: stretch;
+            min-height: 390px;
+        }
+        .hero-left {
+            flex: 1 1 40%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background:rgba(255,255,255,0.91);
+        }
+        .hero-pic {
+            width: 280px;
+            height: 340px;
+            object-fit: cover;
+            border-radius: 14px;
+            background: #ddd;
+            border: 4px solid #fff;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+        }
+        .hero-right {
+            flex: 2 1 60%;
+            padding: 3em 2.5em 1em 2.5em;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            background: rgba(51,73,93, 0.91);
+        }
+        .hero-right h1 {
+            font-family: 'Montserrat', Arial, sans-serif;
+            font-size: 3em;
+            color: #fff;
+            margin: 0 0 0.1em 0;
+            font-weight:700;
+        }
+        .hero-right h2 {
+            color: #fff;
+            margin: 0;
+            font-size: 1.4em;
+            letter-spacing: 0.02em;
+            font-weight: 400;
+        }
+        .uline {
+            border: none;
+            border-top: 5px solid var(--orange);
+            border-bottom: 3px solid var(--brown);
+            margin-top: 18px;
+            margin-bottom: 22px;
+            width: 50%;
+        }
+
+        /* ABOUT ME */
+        .about-section {
+            background: #ffe6d1;
+            border-radius: 0 0 12px 12px;
+            margin: 0 auto 0 auto;
+            max-width: 1100px;
+            padding: 2em 2em 1.5em 2em;
+            margin-top: -22px;
+            box-shadow: 0 4px 18px rgba(0,0,0,0.04);
+            display: flex;
+            flex-direction: row;
+            gap: 1.2em;
+        }
+        .about-section .about-bio {
+            flex:2;
+            font-size: 1.11em;
+            line-height: 1.65;
+        }
+
+        /* RESEARCH INTERESTS */
+        .section {
+            background: var(--tan);
+            margin: 0 ;
+            padding: 0;
+        }
+        .interests-band {
+            background: var(--tan);
+            padding: 3em 0 2.5em 0;
+            text-align: center;
+        }
+        .section-title {
+            font-family: 'Montserrat', Arial, sans-serif;
+            font-size: 2.8em;
+            font-weight: 400;
+            color: #222;
+            margin-top: 5px;
+            margin-bottom: 0;
+        }
+        .uline-wide {
+            border: none;
+            border-top: 5px solid var(--orange);
+            border-bottom: 3px solid var(--brown);
+            width: 22vw;
+            min-width: 250px;
+            margin-bottom: 20px;
+            margin-top: 7px;
+        }
+        .interest-list {
+            text-align: left;
+            margin: 0 auto;
+            max-width: 640px;
+            font-size: 1.22em;
+        }
+        .interest-list ul {
+            padding-left: 1.5em;
+        }
+        .interest-list li {
+            margin-bottom: 8px;
+        }
+        
+        /* CV SECTION */
+        .cv-section {
+            background: var(--blue);
+            padding: 3em 0 3em 0;
+            text-align: center;
+            color: #fff;
+        }
+        .cv-section h2 {
+            font-size: 2.7em;
+            margin-bottom: 0;
+            font-weight:700;
+        }
+        .cv-section .uline-wide {
+            margin-bottom:30px;
+        }
+        .cv-dl {
+            background: var(--orange);
+            display: inline-block;
+            margin-top: 16px;
+            padding: 12px 30px;
+            font-size: 1.22em;
+            color: #fff;
+            font-weight: bold;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+        .cv-dl:hover { background: #ad450b; }
+
+        /* CONTACT SECTION */
+        .contact-section {
+            background: var(--brown);
+            color: #fff;
+            padding: 4em 0 4em 0;
+            text-align: center;
+        }
+        .contact-title {
+            font-family: 'Montserrat', Arial, sans-serif;
+            font-size: 2.8em;
+            font-weight: 400;
+            margin-bottom: 0;
+            margin-top: 5px;
+        }
+        .cline {
+            border: none;
+            border-top: 5px solid var(--orange);
+            width: 20vw;
+            min-width: 210px;
+            margin-bottom: 18px;
+            margin-top: 10px;
+        }
+        .contact-block {
+            display:flex;
+            justify-content:center;
+            align-items:flex-start;
+            gap:4vw;
+            margin-top:30px;
+            flex-wrap: wrap;
+        }
+        .contact-left, .contact-right {
+            min-width:240px;
+            text-align:left;
+            font-size:1.11em;
+            line-height:1.33;
+        }
+        .contact-left {
+            font-size:1.13em;
+            font-weight: 400;
+        }
+        .contact-right a {
+            color:#fff;
+            text-decoration:none;
+            margin-right:18px;
+            font-size:1.05em;
+            vertical-align:middle;
+            transition:opacity 0.2s;
+        }
+        .contact-right a:hover { opacity:0.7;}
+        .contact-icons {
+            margin-top:8px;
+        }
+        .contact-icons svg {
+            width:27px;
+            height:27px;
+            margin-right:5px;
+            vertical-align:middle;
+            fill:#fff;
+        }
+        /* Responsive */
+        @media(max-width:1200px) {
+            .about-section { flex-direction:column; align-items:center;}
+            .about-section img { margin-bottom:1em; }
+            .hero-pic { width:200px; height:250px;}
+            .hero-right {
+                padding:1.5em 0.7em 1em 0.8em;
+            }
+        }
+        @media(max-width:650px){
+            .hero-bg, .hero-inner { flex-direction:column;}
+            .hero-left, .hero-right { padding:1em;}
+            .section-title, .contact-title { font-size:2em;}
+            .contact-section, .cv-section, .interests-band { padding:1.6em 0;}
+            .uline-wide, .cline {min-width:120px;}
+            .contact-block {gap:1.5em; flex-direction:column;}
+            .nav a, .nav svg {font-size:1.1em; width:20px; height:20px;}
+        }
+        a { color: var(--blue); }
+    </style>
+</head>
+<body>
+    <!-- NAVIGATION -->
+    <nav class="nav">
+        <a href="mailto:JAD335@pitt.edu" class="email-icon" title="Email">&#9993;</a>
+        <a href="https://www.linkedin.com/in/jack-dicarlantonio-4932a1296/" target="_blank" title="LinkedIn">
+            <svg viewBox="0 0 24 24"><path d="M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19M7.5 17V10.5H5V17H7.5M6.25 9.43C7.08 9.43 7.75 8.76 7.75 7.93C7.75 7.11 7.08 6.43 6.25 6.43C5.41 6.43 4.75 7.11 4.75 7.93C4.75 8.76 5.41 9.43 6.25 9.43M19 17V13.28C19 10.64 17.15 10.28 16.38 10.28C15.59 10.28 15.09 10.92 14.83 11.37V10.5H12.25V17H14.75V13.39C14.75 12.36 15.36 12.12 16 12.12C16.64 12.12 16.75 12.71 16.75 13.55V17H19Z"/></svg>
+        </a>
+        <a href="https://x.com/JackDiCarlan" target="_blank" title="X" class="x-link">
+            <svg viewBox="0 0 1200 1227"><path d="M859.6 0h193.1L740.5 519.3 1200 1227H831.8L540.6 753.8 210.1 1227H17L490 669.1 49.3 0h377.5l226.7 351.2zM794.4 1106.2h107.1L329.1 104.1H215.1z"/></svg>
+        </a>
+    </nav>
+
+    <!-- HERO BANNER -->
+    <div class="hero-bg">
+        <div class="hero-inner">
+            <div class="hero-left">
+                <img src="original-08AE49F3-C82D-4F8F-8C52-3FEDEECB80C1.jpeg" class="hero-pic" alt="Jack DiCarlantonio">
+            </div>
+            <div class="hero-right">
+                <h1>Jack DiCarlantonio</h1>
+                <h2>Research Coordinator</h2>
+                <hr class="uline">
+            </div>
+        </div>
+    </div>
+
+    <!-- ABOUT ME -->
+    <div class="about-section">
+        <div class="about-bio">
+            <p>
+                I recently graduated with High Honors from the University of Pittsburgh, earning a B.S. in Psychology and a minor in Studio Arts. My academic focus and research experiences have centered on understanding mood disorders, with a particular interest in bipolar disorder and the factors that influence emotional regulation.
+            </p>
+            <p>
+                At Pitt, I completed my honors thesis under the mentorship of Dr. Tina R. Goldstein, where I explored how mood lability and emotional regulation differ in children and adolescents with bipolar disorder compared to those with both bipolar disorder and comorbid ADHD. This project deepened my commitment to research on mood disorders and inspired me to continue studying the complexities of emotional health across the lifespan.
+            </p>
+            <p>
+                I am currently a research area specialist associate at the Heinz C. Prechter Bipolar Research Program within Michigan Medicine’s Department of Psychiatry, where I work alongside Dr. Sarah Sperry, Dr. Kelly Ryan, and Dr. Melvin McInnis. My primary role focuses on the BD2 study (Breakthrough Discoveries for Thriving with Bipolar Disorder), where I coordinate various aspects of research aimed at better understanding and improving outcomes for individuals with bipolar disorder.
+            </p>
+            <p>
+                Throughout my training, I’ve gained broad experience in clinical and neuropsychological research, including participant recruitment, data collection and analysis, and administering cognitive and qualitative assessments. My long-term goal is to bridge the gap between research and clinical practice to promote better interventions for mood disorders.
+            </p>
+            <p>
+                If you share an interest in mood disorders or mental health research, I’d love to connect!
+            </p>
+        </div>
+    </div>
+
+    <!-- RESEARCH INTERESTS -->
+    <div class="section">
+        <div class="interests-band">
+            <span class="section-title">Research Interests</span>
+            <hr class="uline-wide">
+            <div class="interest-list">
+                <ul>
+                    <li>Mood disorders, particularly bipolar disorder</li>
+		    <li>Age of onset and its association with symptom presentation</li>
+                    <li>Emotional regulation and mood lability across the lifespan</li>
+                    <li>Comorbid disorders and symptom presentation</li>
+                    <li>Integration of psychiatric and therapeutic interventions</li>
+                    <li>Psychopharmacology in the treatment of mood disorders</li>
+                    <li>Clinical and neuropsychological assessment method</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- CURRICULUM VITAE -->
+    <div class="cv-section">
+        <h2>Curriculum<br>vitae</h2>
+        <hr class="uline-wide">
+        <a class="cv-dl" href="Jack_DiCarlantonio_CV1.pdf" target="_blank" download>
+            Download PDF
+        </a>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="contact-section">
+        <div class="contact-title">Contact<br>Information</div>
+        <hr class="cline">
+        <div class="contact-block">
+            <div class="contact-left">
+                Jack DiCarlantonio<br>
+                Ann Arbor, MI 48109
+            </div>
+            <div class="contact-right">
+                Email: <a href="mailto:JAD335@pitt.edu">JAD335@pitt.edu</a><br>
+                Phone: <a href="tel:+12156806719">215-680-6719</a>
+                <div class="contact-icons">
+                    <a href="https://www.linkedin.com/in/jack-dicarlantonio-4932a1296/" target="_blank" title="LinkedIn" aria-label="LinkedIn">
+                        <svg viewBox="0 0 24 24"><path d="M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19M7.5 17V10.5H5V17H7.5M6.25 9.43C7.08 9.43 7.75 8.76 7.75 7.93C7.75 7.11 7.08 6.43 6.25 6.43C5.41 6.43 4.75 7.11 4.75 7.93C4.75 8.76 5.41 9.43 6.25 9.43M19 17V13.28C19 10.64 17.15 10.28 16.38 10.28C15.59 10.28 15.09 10.92 14.83 11.37V10.5H12.25V17H14.75V13.39C14.75 12.36 15.36 12.12 16 12.12C16.64 12.12 16.75 12.71 16.75 13.55V17H19Z"/></svg>
+                    </a>
+                    <a href="https://x.com/JackDiCarlan" target="_blank" title="X" aria-label="X / Twitter">
+                        <svg viewBox="0 0 1200 1227"><path d="M859.6 0h193.1L740.5 519.3 1200 1227H831.8L540.6 753.8 210.1 1227H17L490 669.1 49.3 0h377.5l226.7 351.2zM794.4 1106.2h107.1L329.1 104.1H215.1z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
